@@ -815,7 +815,7 @@ body { background:var(--paper); background-image:none; }
 .talk-button:hover { color:var(--ink); rotate:-2.5deg; animation:talk-hover 2.5s infinite ease-in-out; }
 .talk-button:focus-visible { outline:2px solid var(--pink); outline-offset:4px; }
 .talk-button .button-cosm { position:absolute; left:0; top:0; width:128px; height:128px; fill:rgba(32,24,43,.4); pointer-events:none; scale:.32; translate:calc(-100% + 35px) .25rem; transition:.3s ease-out; }
-.talk-button .highlight { position:absolute; inset:0; width:100%; height:100%; fill:rgba(255,225,0,.38); stroke:rgba(255,225,0,.55); stroke-width:10; stroke-linecap:round; pointer-events:none; stroke-dasharray:1000; stroke-dashoffset:1000; transition:stroke-dashoffset .5s ease-in-out; }
+.talk-button .highlight { position:absolute; inset:0; width:100%; height:100%; fill:rgba(255,225,0,.38); stroke:rgba(255,225,0,.55); stroke-width:10; stroke-linecap:round; pointer-events:none; stroke-dasharray:1000; stroke-dashoffset:1000; transform:translateY(-7px) scaleY(.86); transform-origin:center; transition:stroke-dashoffset .5s ease-in-out; }
 .talk-button span { position:relative; z-index:1; }
 .talk-button:hover .highlight { stroke-dashoffset:0; }
 .talk-button:hover .button-cosm { rotate:-15deg; translate:calc(-100% + 33px) .5rem; }
