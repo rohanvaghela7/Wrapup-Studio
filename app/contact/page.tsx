@@ -1,6 +1,6 @@
 import { Shell } from '@/components/site-shell';
 import { BookingForm, PageIntro } from '@/components/ui';
-import { createWhatsAppUrl, WHATSAPP_DISPLAY } from '@/lib/site-config';
+import { createPhoneUrl, createWhatsAppUrl, PHONE_DISPLAY, WHATSAPP_DISPLAY } from '@/lib/site-config';
 
 export default function ContactPage() {
   return <Shell><main className="contact-page">
@@ -15,6 +15,7 @@ export default function ContactPage() {
         <p>For weddings, portraits, films, campaigns, and all other good ideas.</p>
         <p>
           <a href="mailto:hello@wrapupstudio.in">hello@wrapupstudio.in</a>
+          <a href={createPhoneUrl()}>Call: {PHONE_DISPLAY}</a>
           <a href={createWhatsAppUrl()} target="_blank" rel="noreferrer">
             WhatsApp: {WHATSAPP_DISPLAY}
           </a>
