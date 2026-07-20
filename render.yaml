@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: wrap-up-studio
+    runtime: node
+    region: singapore
+    plan: starter
+    buildCommand: npm ci && npm run build
+    startCommand: npm start -- -H 0.0.0.0 -p $PORT
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22.14.0
+      - key: NEXT_PUBLIC_SITE_URL
+        value: https://wrap-up-studio.onrender.com
+      - key: NEXT_PUBLIC_WHATSAPP_NUMBER
+        value: "917778894337"
