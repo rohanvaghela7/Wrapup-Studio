@@ -79,7 +79,7 @@ export function Footer() {
           </a>
         </div>
       </div>
-      <div className="footer-bottom"><span>© 2026 Wrap UP</span><span>Mumbai · Delhi · Available worldwide</span><span>Photo · Film · Drone</span></div>
+      <div className="footer-bottom"><span>© 2026 Wrap UP Studio. All rights reserved.</span><span>Mumbai · Delhi · Available worldwide</span><span>Photo · Film · Drone</span></div>
     </footer>
   );
 }
