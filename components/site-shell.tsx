@@ -31,9 +31,9 @@ export function Header() {
         <Link href="/journal">Journal</Link>
       </nav>
       <div className="header-actions">
-        <a className="header-contact talk-link" href={createPhoneUrl()} aria-label={`Call ${PHONE_DISPLAY}`}>
+        <Link className="header-contact talk-link" href="/contact">
           Let’s talk <ArrowUpRight size={14} />
-        </a>
+        </Link>
         <button className="menu-button" aria-label={open ? 'Close navigation' : 'Open navigation'} onClick={() => setOpen(!open)}>
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
