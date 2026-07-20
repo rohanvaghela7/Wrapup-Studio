@@ -48,6 +48,20 @@ export default function Home() {
 
     <Testimonials />
 
-    <section className="section cta-section colour-cta"><div className="cta-camera"><Camera size={48} /></div><p className="eyebrow">Made around your story</p><h2 className="section-heading">Your big day.<br /><em>Your brightest memories.</em></h2><p className="hero-sub">Photo, film and drone experiences shaped around your people, place, and celebration.</p><Link className="button button-pop" href="/services">Explore our services <ArrowUpRight size={16} /></Link></section>
+    <section className="section cta-section colour-cta">
+      <div className="cta-copy">
+        <div className="cta-camera"><Camera size={42} /></div>
+        <p className="eyebrow"><span className="cta-number">01</span> Made around your story</p>
+        <h2 className="section-heading">Your big day.<br /><em>Your brightest memories.</em></h2>
+        <p className="hero-sub">Photo, film and drone experiences shaped around your people, place, and celebration.</p>
+        <div className="cta-actions"><Link className="button button-pop" href="/services">Explore our services <ArrowUpRight size={16} /></Link><span className="cta-note">Let’s make something worth remembering.</span></div>
+      </div>
+      <div className="cta-collage" aria-label="Wrap UP wedding photography">
+        <div className="cta-frame cta-frame-main"><img src="/work-indian-wedding-06.jpg" alt="Couple smiling together on their wedding day" /></div>
+        <div className="cta-frame cta-frame-small"><img src="/work-indian-wedding-05.jpg" alt="Indian wedding couple outdoors" /></div>
+        <div className="cta-sticker">PHOTO<br />FILM<br />DRONE</div>
+        <span className="cta-collage-label">WRAP UP / 2026</span>
+      </div>
+    </section>
   </main></Shell>;
 }
