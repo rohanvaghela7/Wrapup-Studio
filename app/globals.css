@@ -809,6 +809,26 @@ body { background:var(--paper); background-image:none; }
   .colour-cta .section-heading { margin:23px 0 22px; }
 }
 
+/* Hand-drawn contact button adapted from the supplied Uiverse design. */
+.talk-button-filters { position:absolute; width:0; height:0; overflow:hidden; pointer-events:none; }
+.talk-button { position:relative; display:inline-flex; align-items:center; justify-content:center; min-width:132px; padding:12px 14px 12px 34px; color:var(--blue); background:transparent; border:0; border-radius:2rem; box-shadow:rgba(32,24,43,.28) 4px 4px 0 1px; font:700 10px/1 "Courier New",monospace; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; cursor:pointer; user-select:none; filter:url(#handDrawnNoise); animation:talk-idle 1s infinite ease-in-out; }
+.talk-button:hover { color:var(--ink); rotate:-2.5deg; animation:talk-hover 2.5s infinite ease-in-out; }
+.talk-button:focus-visible { outline:2px solid var(--pink); outline-offset:4px; }
+.talk-button .button-cosm { position:absolute; left:0; top:0; width:128px; height:128px; fill:rgba(32,24,43,.4); pointer-events:none; scale:.32; translate:calc(-100% + 35px) .25rem; transition:.3s ease-out; }
+.talk-button .highlight { position:absolute; inset:0; width:100%; height:100%; fill:rgba(255,225,0,.38); stroke:rgba(255,225,0,.55); stroke-width:10; stroke-linecap:round; pointer-events:none; stroke-dasharray:1000; stroke-dashoffset:1000; transition:stroke-dashoffset .5s ease-in-out; }
+.talk-button span { position:relative; z-index:1; }
+.talk-button:hover .highlight { stroke-dashoffset:0; }
+.talk-button:hover .button-cosm { rotate:-15deg; translate:calc(-100% + 33px) .5rem; }
+.talk-button:active { box-shadow:inset rgba(32,24,43,.8) 4px 4px 0 1px; rotate:-2.5deg; animation:talk-active 1s infinite ease-in-out; }
+.talk-button:active .highlight { stroke-dashoffset:1000; animation:talk-highlight 5s infinite, talk-colour .5s forwards; }
+@keyframes talk-idle { 0%,100%{filter:url(#handDrawnNoise)} 50%{rotate:2.5deg;filter:url(#handDrawnNoise2)} }
+@keyframes talk-hover { 0%,100%{rotate:0;filter:url(#handDrawnNoise);translate:0 0} 25%{rotate:-1deg;filter:url(#handDrawnNoise2);translate:0 -2px} 50%{rotate:0;filter:url(#handDrawnNoise);translate:0 2px} 75%{rotate:-1deg;filter:url(#handDrawnNoise2);translate:0 -2px} }
+@keyframes talk-active { 0%,100%{filter:url(#handDrawnNoiset);translate:0 -1px} 50%{filter:url(#handDrawnNoiset2);translate:0 1px} }
+@keyframes talk-highlight { 0%{stroke-dashoffset:0} 25%,50%{stroke-dashoffset:1000} 100%{stroke-dashoffset:0} }
+@keyframes talk-colour { from{stroke:rgba(255,225,0,.5)} to{stroke:rgba(28,152,235,.4)} }
+
+@media(max-width:800px){ .header-actions .talk-button { display:none; } }
+
 /* Final invitation: an editorial collage instead of an empty text block. */
 .colour-cta {
   display:grid;
