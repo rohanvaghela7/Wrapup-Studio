@@ -56,7 +56,8 @@ export function Footer() {
     <footer className="site-footer">
       <div>
         <div className="footer-mark"><Aperture size={22} /> WRAP <span>UP</span></div>
-        <p className="muted footer-note">Bold photographs for<br />big-hearted celebrations.</p>
+        <p className="footer-note">Beautiful photographs and films for weddings, families, brands, and unforgettable celebrations.</p>
+        <p className="footer-copyright">© 2026 Wrap UP Studio. All rights reserved.</p>
       </div>
       <div className="footer-links">
         <div>
