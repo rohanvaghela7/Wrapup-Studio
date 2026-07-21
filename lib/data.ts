@@ -35,6 +35,13 @@ export const portfolioPhotos: PortfolioImage[] = [
   { id: 'p12', src: '/work/wrapup-wedding-12.jpg', alt: 'Groom in traditional Bengali wedding attire', title: 'Ready for forever', category: 'Portraits', location: 'Mumbai', size: 'tall', mediaType: 'image', width: 4000, height: 6000 },
   { id: 'p13', src: '/work/wrapup-wedding-13.jpg', alt: 'Black and white portrait of a Bengali bride', title: 'Grace in monochrome', category: 'Portraits', location: 'Delhi', size: 'tall', mediaType: 'image', width: 3119, height: 5896 },
   { id: 'p14', src: '/work/wrapup-wedding-14.jpg', alt: 'Groom placing a ceremonial ornament above the bride', title: 'The smallest traditions', category: 'Weddings', location: 'Udaipur', size: 'wide', mediaType: 'image', width: 8256, height: 5504 },
+  { id: 'p15', src: '/work/wrapup-wedding-15.jpg', alt: 'Couple seated on palace steps beneath falling rose petals', title: 'Petals and promises', category: 'Weddings', location: 'Ahmedabad', size: 'tall', mediaType: 'image', width: 736, height: 1114 },
+  { id: 'p16', src: '/work/wrapup-wedding-16.jpg', alt: 'Bride and groom sharing a quiet wedding moment', title: 'A quiet promise', category: 'Weddings', location: 'Delhi', size: 'wide', mediaType: 'image', width: 736, height: 636 },
+  { id: 'p17', src: '/work/wrapup-wedding-17.jpg', alt: 'Bride walking through a garden with her bridesmaids', title: 'The bridal entrance', category: 'Weddings', location: 'Jaipur', size: 'tall', mediaType: 'image', width: 736, height: 1308 },
+  { id: 'p18', src: '/work/wrapup-wedding-18.jpg', alt: 'Bride smiling at the groom during an outdoor portrait', title: 'A glance between us', category: 'Portraits', location: 'Mumbai', size: 'tall', mediaType: 'image', width: 736, height: 1013 },
+  { id: 'p19', src: '/work/wrapup-wedding-19.jpg', alt: 'Wedding couple embracing beneath palace arches and rose petals', title: 'Under the palace arches', category: 'Weddings', location: 'Udaipur', size: 'tall', mediaType: 'image', width: 736, height: 1308 },
+  { id: 'p20', src: '/work/wrapup-wedding-20.jpg', alt: 'Groom kissing the bride during an outdoor portrait', title: 'Close to forever', category: 'Portraits', location: 'Pune', size: 'tall', mediaType: 'image', width: 736, height: 1103 },
+  { id: 'p21', src: '/work/wrapup-wedding-21.jpg', alt: 'Bride and groom posing together beside a lake', title: 'By the water', category: 'Portraits', location: 'Mehsana', size: 'tall', mediaType: 'image', width: 736, height: 1105 },
 ];
 
 // Keep the homepage motion-led while the Work archive combines every supplied
@@ -48,6 +55,7 @@ export const portfolioMedia: PortfolioImage[] = [
   portfolioPhotos[8], portfolioPhotos[9], portfolioVideos[4],
   portfolioPhotos[10], portfolioPhotos[11], portfolioVideos[5],
   portfolioPhotos[12], portfolioPhotos[13],
+  ...portfolioPhotos.slice(14),
   ...portfolioVideos.slice(6),
 ];
 
