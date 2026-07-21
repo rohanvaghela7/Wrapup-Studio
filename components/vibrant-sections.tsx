@@ -140,7 +140,7 @@ export function IndianFeature() {
     </Reveal>
     <div className="rang-collage">
       <motion.div className="rang-photo rang-photo-main" whileInView={{ y: [70, 0], rotate: [-3, 0] }} viewport={{ once: true }} transition={{ duration: 1, ease: [.22, 1, .36, 1] }}><VideoFrame src={portfolio[0].src} alt="Joyful wedding celebration film" label="Shaadi · Jaipur" /></motion.div>
-      <motion.div className="rang-photo rang-photo-small" whileInView={{ y: [-50, 0], rotate: [6, 2] }} viewport={{ once: true }} transition={{ duration: 1.1, delay: .12, ease: [.22, 1, .36, 1] }}><VideoFrame src={portfolio[7].src} alt="Colourful portfolio showreel" label="Films · India" /></motion.div>
+      <motion.div className="rang-photo rang-photo-small" whileInView={{ y: [-50, 0], rotate: [6, 2] }} viewport={{ once: true }} transition={{ duration: 1.1, delay: .12, ease: [.22, 1, .36, 1] }}><VideoFrame src={portfolio[4].src} alt="Colourful portfolio showreel" label="Films · India" /></motion.div>
       <motion.div className="film-stamp" animate={{ rotate: [2, -2, 2] }} transition={{ duration: 4, repeat: Infinity }}><Camera size={19} /> 35MM / DIGITAL / DRONE</motion.div>
     </div>
   </section>;

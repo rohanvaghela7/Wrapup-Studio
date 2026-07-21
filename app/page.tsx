@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { ArrowUpRight, Camera, Sparkles } from 'lucide-react';
-import { portfolio, instagram } from '@/lib/data';
+import { portfolio } from '@/lib/data';
 import { Shell } from '@/components/site-shell';
 import { IndianFeature, RotatingWorkQuote, SplitHeroVideos } from '@/components/vibrant-sections';
 import { IndianWeddingCarousel } from '@/components/indian-wedding-carousel';
-import { ArrowLink, GalleryCard, Marquee, Reveal, Stats, Testimonials, VideoFrame } from '@/components/ui';
+import { ArrowLink, GalleryCard, Marquee, Reveal, Stats, Testimonials } from '@/components/ui';
 
 export default function Home() {
   return <Shell><main>
@@ -43,7 +43,7 @@ export default function Home() {
 
     <section className="instagram-section colourful-instagram">
       <div className="insta-handle"><div><p className="eyebrow">Fresh from the camera roll</p><h2>@wrapupstudio</h2></div><a href="https://instagram.com" target="_blank" className="arrow-link">Follow the colour <ArrowUpRight size={16} /></a></div>
-      <div className="insta-belt"><div className="insta-belt-track">{[0, 1].map(sequence => <div className="insta-belt-sequence" aria-hidden={sequence === 1} key={sequence}>{instagram.map((item, index) => <div className={`insta-item insta-${index + 1}`} key={`${item.id}-${sequence}`}><VideoFrame src={item.src} alt={item.alt} /><span className="insta-index">0{index + 1}</span></div>)}</div>)}</div></div>
+      <div className="insta-belt insta-belt-empty" aria-hidden="true" />
     </section>
 
     <Testimonials />

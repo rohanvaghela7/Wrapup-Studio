@@ -12,18 +12,12 @@ export type PortfolioImage = {
 };
 
 export const portfolioVideos: PortfolioImage[] = [
-  { id: 'v01', src: '/camera-ready-indian-wedding.mp4', alt: 'Indian wedding celebration film', title: 'A day in full colour', category: 'Weddings', location: 'Mumbai', size: 'tall', mediaType: 'video' },
-  { id: 'v02', src: '/camera-ready-wedding.mp4', alt: 'Wedding story film', title: 'The celebration begins', category: 'Weddings', location: 'Ahmedabad', size: 'wide', mediaType: 'video' },
   { id: 'v03', src: '/client-story-01.mp4', alt: 'Client story highlight film', title: 'The story between moments', category: 'Film', location: 'Jaipur', size: 'standard', mediaType: 'video' },
   { id: 'v04', src: '/client-story-02.mp4', alt: 'Portrait film sequence', title: 'A quiet frame', category: 'Portraits', location: 'Delhi', size: 'square', mediaType: 'video' },
   { id: 'v05', src: '/client-story-03.mp4', alt: 'Wedding highlight sequence', title: 'Joy, uninterrupted', category: 'Weddings', location: 'Udaipur', size: 'panorama', mediaType: 'video' },
-  { id: 'v06', src: '/client-story-04.mp4', alt: 'Editorial motion sequence', title: 'Movement and light', category: 'Editorial', location: 'Pune', size: 'tall', mediaType: 'video' },
   { id: 'v07', src: '/client-story-05.mp4', alt: 'Cinematic client story', title: 'Held in motion', category: 'Film', location: 'Mehsana', size: 'wide', mediaType: 'video' },
   { id: 'v08', src: '/portfolio-work-background.mp4', alt: 'Wrap UP portfolio showreel', title: 'The Wrap UP reel', category: 'Film', location: 'Across India', size: 'panorama', mediaType: 'video' },
-  { id: 'v09', src: '/home-hero-background.mp4', alt: 'Wedding film moment', title: 'Before the vows', category: 'Weddings', location: 'Ahmedabad', size: 'standard', mediaType: 'video' },
   { id: 'v10', src: '/home-hero-slide-left-2.mp4', alt: 'Editorial celebration film', title: 'Colour in motion', category: 'Editorial', location: 'Jaipur', size: 'tall', mediaType: 'video' },
-  { id: 'v11', src: '/home-hero-slide-left-3.mp4', alt: 'Portrait film moment', title: 'In the moment', category: 'Portraits', location: 'Delhi', size: 'square', mediaType: 'video' },
-  { id: 'v12', src: '/home-hero-slide-right-2.mp4', alt: 'Cinematic wedding detail', title: 'Every little feeling', category: 'Film', location: 'Udaipur', size: 'wide', mediaType: 'video' },
 ];
 
 export const portfolioPhotos: PortfolioImage[] = [
@@ -44,7 +38,7 @@ export const portfolioPhotos: PortfolioImage[] = [
 ];
 
 // Keep the homepage motion-led while the Work archive combines every supplied
-// original-resolution photograph with all existing films.
+// original-resolution photograph with the selected films.
 export const portfolio = portfolioVideos;
 export const portfolioMedia: PortfolioImage[] = [
   portfolioPhotos[0], portfolioPhotos[1], portfolioVideos[0],
@@ -69,4 +63,4 @@ export const testimonials = [
   { quote: 'A rare combination of intuition and intention. Every frame had a point of view.', name: 'Studio Forma', type: 'Campaign, Brooklyn' },
 ];
 
-export const instagram = portfolio.slice(1, 7);
+export const instagram: PortfolioImage[] = [];

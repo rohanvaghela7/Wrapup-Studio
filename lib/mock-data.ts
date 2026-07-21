@@ -33,7 +33,7 @@ export const clientGalleries: ClientGallery[] = [
     couple: 'Mara Chen',
     year: '2024',
     note: 'A private proofing space for your final portrait collection.',
-    images: [portfolio[1], portfolio[4], portfolio[6], portfolio[7]],
+    images: [portfolio[1], portfolio[4], portfolio[0], portfolio[3]],
   },
 ];
 
