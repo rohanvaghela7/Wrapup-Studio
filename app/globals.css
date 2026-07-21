@@ -1084,6 +1084,54 @@ html.site-intro-active { overflow:hidden; }
 .contact-page .contact-layout {
   margin:clamp(42px,4.5vw,72px) auto 0;
 }
+.contact-location-title {
+  max-width:440px;
+  margin:18px 0 24px;
+  color:var(--ink);
+  font:400 clamp(38px,4.2vw,62px)/.98 Georgia,serif;
+  letter-spacing:-.055em;
+}
+.contact-location-title em { color:var(--blue); font-weight:400; }
+.contact-location-copy {
+  max-width:440px;
+  margin:0;
+  color:#625f58;
+  font-size:15px;
+  line-height:1.75;
+}
+.office-locations {
+  max-width:470px;
+  margin-top:34px;
+  padding-top:23px;
+  border-top:1px solid var(--line);
+}
+.office-locations-label {
+  margin:0 0 15px;
+  color:var(--pink);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.office-location-list {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.office-location-list li {
+  padding:9px 13px;
+  color:var(--blue);
+  background:rgba(255,255,255,.48);
+  border:1px solid rgba(48,67,125,.24);
+  border-radius:999px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
 
 /* Rolling words in the India feature heading. */
 .rang-word-window {
