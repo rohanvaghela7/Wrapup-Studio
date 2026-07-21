@@ -108,7 +108,7 @@ export function GalleryCard({ item, index = 0, photoOnly = false, onOpen }: { it
     <Link href={`/portfolio/${item.category.toLowerCase()}`}>
       {isVideo
         ? <div className="gallery-video-wrap"><VideoFrame src={item.src} alt={item.alt} className="gallery-media-frame" contain aspectRatio="16 / 9" /></div>
-        : <><ImageFrame src={item.src} alt={item.alt} label={item.category} className="gallery-media-frame" contain aspectRatio={item.width && item.height ? `${item.width} / ${item.height}` : undefined} /><div className="gallery-caption"><span>{item.title}</span><span>{item.location}</span></div></>}
+        : <ImageFrame src={item.src} alt={item.alt} className="gallery-media-frame" contain aspectRatio={item.width && item.height ? `${item.width} / ${item.height}` : undefined} />}
     </Link>
   </Reveal>;
 }
