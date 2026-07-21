@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { clientGalleries } from '@/lib/mock-data';
 import { Shell } from '@/components/site-shell';
-import { DownloadButton, FavoriteButton, ImageFrame } from '@/components/ui';
+import { DownloadButton, FavoriteButton, VideoFrame } from '@/components/ui';
 
 export default async function GalleryPage({
   params,
@@ -18,13 +18,13 @@ export default async function GalleryPage({
       <p>{gallery.note}</p>
     </div>
     <div className="proof-grid">{gallery.images.map((item) => <div className="proof-item" key={item.id}>
-      <ImageFrame src={item.src} alt={item.alt} />
+      <VideoFrame src={item.src} alt={item.alt} />
       <div className="proof-actions"><FavoriteButton id={`${gallery.slug}-${item.id}`} /></div>
       <span className="watermark">Wrap UP</span>
     </div>)}</div>
     <div className="download-panel">
       <div>
-        <p>{gallery.images.length} photographs in this proofing gallery</p>
+        <p>{gallery.images.length} films in this private gallery</p>
         <span>Select your favorites and we’ll prepare the final collection.</span>
       </div>
       <DownloadButton />

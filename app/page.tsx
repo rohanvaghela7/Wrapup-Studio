@@ -4,7 +4,7 @@ import { portfolio, instagram } from '@/lib/data';
 import { Shell } from '@/components/site-shell';
 import { IndianFeature, RotatingWorkQuote, SplitHeroVideos } from '@/components/vibrant-sections';
 import { IndianWeddingCarousel } from '@/components/indian-wedding-carousel';
-import { ArrowLink, GalleryCard, ImageFrame, Marquee, Reveal, Stats, Testimonials } from '@/components/ui';
+import { ArrowLink, GalleryCard, Marquee, Reveal, Stats, Testimonials, VideoFrame } from '@/components/ui';
 
 export default function Home() {
   return <Shell><main>
@@ -43,7 +43,7 @@ export default function Home() {
 
     <section className="instagram-section colourful-instagram">
       <div className="insta-handle"><div><p className="eyebrow">Fresh from the camera roll</p><h2>@wrapupstudio</h2></div><a href="https://instagram.com" target="_blank" className="arrow-link">Follow the colour <ArrowUpRight size={16} /></a></div>
-      <div className="insta-belt"><div className="insta-belt-track">{[0, 1].map(sequence => <div className="insta-belt-sequence" aria-hidden={sequence === 1} key={sequence}>{instagram.map((item, index) => <div className={`insta-item insta-${index + 1}`} key={`${item.id}-${sequence}`}><ImageFrame src={item.src} alt={item.alt} /><span className="insta-index">0{index + 1}</span></div>)}</div>)}</div></div>
+      <div className="insta-belt"><div className="insta-belt-track">{[0, 1].map(sequence => <div className="insta-belt-sequence" aria-hidden={sequence === 1} key={sequence}>{instagram.map((item, index) => <div className={`insta-item insta-${index + 1}`} key={`${item.id}-${sequence}`}><VideoFrame src={item.src} alt={item.alt} /><span className="insta-index">0{index + 1}</span></div>)}</div>)}</div></div>
     </section>
 
     <Testimonials />
@@ -57,8 +57,8 @@ export default function Home() {
         <div className="cta-actions"><Link className="button button-pop" href="/services">Explore our services <ArrowUpRight size={16} /></Link><span className="cta-note">Let’s make something worth remembering.</span></div>
       </div>
       <div className="cta-collage" aria-label="Wrap UP wedding photography">
-        <div className="cta-frame cta-frame-main"><img src="/work-indian-wedding-06.jpg" alt="Couple smiling together on their wedding day" /></div>
-        <div className="cta-frame cta-frame-small"><img src="/work-indian-wedding-05.jpg" alt="Indian wedding couple outdoors" /></div>
+        <div className="cta-frame cta-frame-main"><video src="/client-story-04.mp4" autoPlay muted loop playsInline preload="metadata" aria-label="Wedding story film" /></div>
+        <div className="cta-frame cta-frame-small"><video src="/client-story-02.mp4" autoPlay muted loop playsInline preload="metadata" aria-label="Celebration portrait film" /></div>
         <div className="cta-sticker">PHOTO<br />FILM<br />DRONE</div>
         <span className="cta-collage-label">WRAP UP / 2026</span>
       </div>

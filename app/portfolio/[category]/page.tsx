@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { portfolio } from '@/lib/data';
 import { Shell } from '@/components/site-shell';
-import { GalleryCard, ImageFrame, Reveal } from '@/components/ui';
+import { GalleryCard, Reveal, VideoFrame } from '@/components/ui';
 
-const categories = ['weddings', 'portraits', 'editorial', 'commercial', 'film', 'family'];
+const categories = ['weddings', 'portraits', 'editorial', 'film'];
 type CategoryParams = Promise<{ category: string }>;
 
 export function generateStaticParams() {
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: CategoryParams }): 
   const name = category[0]?.toUpperCase() + category.slice(1);
   return {
     title: `${name} Portfolio`,
-    description: `Selected ${category} photography by Wrap UP.`,
+    description: `Selected ${category} films by Wrap UP.`,
   };
 }
 
@@ -36,10 +36,10 @@ export default async function CategoryStory({ params }: { params: CategoryParams
         <h1>{title}<br /><em>in full.</em></h1>
         <p>Honest frames, deliberate light, and the kind of details that keep a story feeling alive.</p>
       </div>
-      <ImageFrame src={hero.src} alt={hero.alt} priority />
+      <VideoFrame src={hero.src} alt={hero.alt} label={`${title} film`} />
     </section>
     <section className="section">
-      <div className="section-intro"><p className="eyebrow">Selected frames</p><span className="muted">A study in presence</span></div>
+      <div className="section-intro"><p className="eyebrow">Selected films</p><span className="muted">Stories in motion</span></div>
       <div className="work-grid story-work">{items.map((item, index) => <GalleryCard item={item} index={index} key={`${item.id}-${index}`} />)}</div>
     </section>
     <Reveal className="story-closing"><p className="eyebrow">End note</p><blockquote>“A photograph is proof that, for one small second, we paid attention.”</blockquote></Reveal>

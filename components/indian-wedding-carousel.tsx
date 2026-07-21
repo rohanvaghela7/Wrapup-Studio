@@ -1,16 +1,15 @@
 'use client';
 
-import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const weddingSlides = [
-  { src: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1400&q=88', alt: 'Indian wedding couple during a traditional ceremony', label: 'Wedding rituals' },
-  { src: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=1400&q=88', alt: 'Indian bride and groom celebrating together', label: 'Bride + groom' },
-  { src: 'https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?auto=format&fit=crop&w=1400&q=88', alt: 'Colourful Indian wedding celebration', label: 'Full colour' },
-  { src: 'https://images.unsplash.com/photo-1610173827043-9db50e0d8ef9?auto=format&fit=crop&w=1400&q=88', alt: 'Traditional Indian bridal portrait', label: 'Bridal portrait' },
-  { src: 'https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1400&q=88', alt: 'Wedding couple walking together', label: 'Golden hour' },
-  { src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=88', alt: 'Newly married couple in soft natural light', label: 'Just married' },
+  { src: '/camera-ready-indian-wedding.mp4', alt: 'Indian wedding ceremony film', label: 'Wedding rituals' },
+  { src: '/client-story-01.mp4', alt: 'Bride and groom story film', label: 'Bride + groom' },
+  { src: '/client-story-03.mp4', alt: 'Colourful celebration film', label: 'Full colour' },
+  { src: '/client-story-05.mp4', alt: 'Cinematic wedding portrait film', label: 'Wedding portrait' },
+  { src: '/home-hero-slide-left-2.mp4', alt: 'Wedding film at golden hour', label: 'Golden hour' },
+  { src: '/home-hero-slide-right-2.mp4', alt: 'Newly married couple film', label: 'Just married' },
 ];
 
 const swipeDirections = [
@@ -46,7 +45,7 @@ export function IndianWeddingCarousel() {
   return <div className="indian-wedding-carousel">
     <AnimatePresence initial={false} custom={direction} mode="sync">
       <motion.div key={slide.src} className="indian-wedding-slide" custom={direction} variants={slideVariants} initial="enter" animate="center" exit="exit" transition={{ duration: .9, ease: [.76, 0, .24, 1] }}>
-        <Image src={slide.src} alt={slide.alt} fill sizes="(max-width: 800px) 100vw, 48vw" className="indian-wedding-image" />
+        <video src={slide.src} autoPlay muted loop playsInline preload="metadata" className="indian-wedding-image" aria-label={slide.alt} />
       </motion.div>
     </AnimatePresence>
     <div className="indian-wedding-shade" />
