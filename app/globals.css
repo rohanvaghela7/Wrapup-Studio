@@ -1495,14 +1495,19 @@ html.site-intro-active { overflow:hidden; }
   background:#17131e;
 }
 
-.insta-placeholder {
+.insta-photo {
   overflow:hidden;
 }
-.insta-placeholder-fill {
+.insta-belt-media {
+  position:relative;
   width:100%;
   height:100%;
-  background:linear-gradient(145deg,#fffdf8,#f5eee4);
+  overflow:hidden;
+  background:#fffdf8;
   border:1px solid rgba(24,18,38,.14);
+}
+.insta-belt-media img {
+  object-fit:contain;
 }
 
 .work-section-colour .work-grid {

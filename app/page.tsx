@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, Camera, Sparkles } from 'lucide-react';
 import { portfolio } from '@/lib/data';
@@ -6,7 +7,16 @@ import { IndianFeature, RotatingWorkQuote, SplitHeroVideos } from '@/components/
 import { IndianWeddingCarousel } from '@/components/indian-wedding-carousel';
 import { ArrowLink, GalleryCard, Marquee, Reveal, Stats, Testimonials } from '@/components/ui';
 
-const emptyBeltFrames = [1, 2, 3, 4, 5, 6];
+const beltPhotos = [
+  { src: '/belt/belt-photo-01.jpg', alt: 'Newlywed couple in ivory wedding attire' },
+  { src: '/belt/belt-photo-02.jpg', alt: 'Couple seated together on a lawn' },
+  { src: '/belt/belt-photo-03.jpg', alt: 'Bride in red wedding attire against a patterned backdrop' },
+  { src: '/belt/belt-photo-04.jpg', alt: 'Bride and bridesmaids posing on venue steps' },
+  { src: '/belt/belt-photo-05.jpg', alt: 'Wedding couple beneath a floral ceremony canopy' },
+  { src: '/belt/belt-photo-06.jpg', alt: 'Bride and groom posing on a palace staircase' },
+  { src: '/belt/belt-photo-07.jpg', alt: 'Bride during a traditional wedding ceremony' },
+  { src: '/belt/belt-photo-08.jpg', alt: 'Newly engaged couple showing their rings' },
+];
 
 export default function Home() {
   return <Shell><main>
@@ -45,9 +55,9 @@ export default function Home() {
 
     <section className="instagram-section colourful-instagram">
       <div className="insta-handle"><div><p className="eyebrow">Fresh from the camera roll</p><h2>@wrapupstudio</h2></div><a href="https://instagram.com" target="_blank" className="arrow-link">Follow the colour <ArrowUpRight size={16} /></a></div>
-      <div className="insta-belt" aria-hidden="true">
+      <div className="insta-belt" aria-label="Wedding camera roll">
         <div className="insta-belt-track">
-          {[0, 1].map(sequence => <div className="insta-belt-sequence" key={sequence}>{emptyBeltFrames.map(frame => <div className={`insta-item insta-placeholder insta-${frame}`} key={`${sequence}-${frame}`}><div className="insta-placeholder-fill" /><span className="insta-index">{String(frame).padStart(2, '0')}</span></div>)}</div>)}
+          {[0, 1].map(sequence => <div className="insta-belt-sequence" aria-hidden={sequence === 1} key={sequence}>{beltPhotos.map((photo, index) => <div className={`insta-item insta-photo insta-${index + 1}`} key={`${sequence}-${photo.src}`}><div className="insta-belt-media"><Image src={photo.src} alt={sequence === 0 ? photo.alt : ''} fill sizes="(max-width: 700px) 230px, 300px" /></div><span className="insta-index">{String(index + 1).padStart(2, '0')}</span></div>)}</div>)}
         </div>
       </div>
     </section>
