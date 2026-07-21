@@ -1507,7 +1507,8 @@ html.site-intro-active { overflow:hidden; }
   border:1px solid rgba(24,18,38,.14);
 }
 .insta-belt-media img {
-  object-fit:contain;
+  object-fit:cover;
+  object-position:center;
 }
 
 .work-section-colour .work-grid {
