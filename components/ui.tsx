@@ -104,7 +104,13 @@ export function GalleryCard({ item, index = 0, photoOnly = false, onOpen }: { it
     </Reveal>;
   }
 
-  return <Reveal delay={Math.min(index * .025, .3)} className={`gallery-card ${item.size || ''} ${isVideo ? 'gallery-video-card' : 'gallery-photo-card'}`}><Link href={`/portfolio/${item.category.toLowerCase()}`}>{isVideo ? <div className="gallery-video-wrap"><VideoFrame src={item.src} alt={item.alt} label={item.category} className="gallery-media-frame" contain aspectRatio="16 / 9" /><span className="media-hd-pill">HD FILM</span></div> : <ImageFrame src={item.src} alt={item.alt} label={item.category} className="gallery-media-frame" contain aspectRatio={item.width && item.height ? `${item.width} / ${item.height}` : undefined} />}<div className="gallery-caption"><span>{item.title}</span><span>{item.location}</span></div></Link></Reveal>;
+  return <Reveal delay={Math.min(index * .025, .3)} className={`gallery-card ${item.size || ''} ${isVideo ? 'gallery-video-card' : 'gallery-photo-card'}`}>
+    <Link href={`/portfolio/${item.category.toLowerCase()}`}>
+      {isVideo
+        ? <div className="gallery-video-wrap"><VideoFrame src={item.src} alt={item.alt} className="gallery-media-frame" contain aspectRatio="16 / 9" /></div>
+        : <><ImageFrame src={item.src} alt={item.alt} label={item.category} className="gallery-media-frame" contain aspectRatio={item.width && item.height ? `${item.width} / ${item.height}` : undefined} /><div className="gallery-caption"><span>{item.title}</span><span>{item.location}</span></div></>}
+    </Link>
+  </Reveal>;
 }
 
 export function FavoriteButton({ id }: { id: string }) { const [liked, setLiked] = useState(false); useEffect(() => setLiked(localStorage.getItem(`favorite-${id}`) === 'true'), [id]); const toggle = () => { setLiked(!liked); localStorage.setItem(`favorite-${id}`, String(!liked)); }; return <button className={`favorite ${liked ? 'is-liked' : ''}`} onClick={toggle} aria-label={liked ? 'Remove from favorites' : 'Add to favorites'}><Heart size={17} fill={liked ? 'currentColor' : 'none'} /></button>; }
