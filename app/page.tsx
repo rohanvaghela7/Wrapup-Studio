@@ -6,6 +6,8 @@ import { IndianFeature, RotatingWorkQuote, SplitHeroVideos } from '@/components/
 import { IndianWeddingCarousel } from '@/components/indian-wedding-carousel';
 import { ArrowLink, GalleryCard, Marquee, Reveal, Stats, Testimonials } from '@/components/ui';
 
+const emptyBeltFrames = [1, 2, 3, 4, 5, 6];
+
 export default function Home() {
   return <Shell><main>
     <section className="hero vibrant-hero home-video-hero">
@@ -43,7 +45,11 @@ export default function Home() {
 
     <section className="instagram-section colourful-instagram">
       <div className="insta-handle"><div><p className="eyebrow">Fresh from the camera roll</p><h2>@wrapupstudio</h2></div><a href="https://instagram.com" target="_blank" className="arrow-link">Follow the colour <ArrowUpRight size={16} /></a></div>
-      <div className="insta-belt insta-belt-empty" aria-hidden="true" />
+      <div className="insta-belt" aria-hidden="true">
+        <div className="insta-belt-track">
+          {[0, 1].map(sequence => <div className="insta-belt-sequence" key={sequence}>{emptyBeltFrames.map(frame => <div className={`insta-item insta-placeholder insta-${frame}`} key={`${sequence}-${frame}`}><div className="insta-placeholder-fill" /><span className="insta-index">{String(frame).padStart(2, '0')}</span></div>)}</div>)}
+        </div>
+      </div>
     </section>
 
     <Testimonials />
