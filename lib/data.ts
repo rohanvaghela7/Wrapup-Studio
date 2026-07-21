@@ -6,12 +6,12 @@ export type PortfolioImage = {
   category: string;
   location: string;
   size?: 'wide' | 'tall' | 'standard' | 'square' | 'panorama';
-  mediaType: 'video';
+  mediaType: 'image' | 'video';
+  width?: number;
+  height?: number;
 };
 
-// Only real project video assets are shown until the client's final photographs
-// are supplied. This keeps the public portfolio free of stock/demo photography.
-export const portfolio: PortfolioImage[] = [
+export const portfolioVideos: PortfolioImage[] = [
   { id: 'v01', src: '/camera-ready-indian-wedding.mp4', alt: 'Indian wedding celebration film', title: 'A day in full colour', category: 'Weddings', location: 'Mumbai', size: 'tall', mediaType: 'video' },
   { id: 'v02', src: '/camera-ready-wedding.mp4', alt: 'Wedding story film', title: 'The celebration begins', category: 'Weddings', location: 'Ahmedabad', size: 'wide', mediaType: 'video' },
   { id: 'v03', src: '/client-story-01.mp4', alt: 'Client story highlight film', title: 'The story between moments', category: 'Film', location: 'Jaipur', size: 'standard', mediaType: 'video' },
@@ -26,7 +26,36 @@ export const portfolio: PortfolioImage[] = [
   { id: 'v12', src: '/home-hero-slide-right-2.mp4', alt: 'Cinematic wedding detail', title: 'Every little feeling', category: 'Film', location: 'Udaipur', size: 'wide', mediaType: 'video' },
 ];
 
-export const portfolioMedia = portfolio;
+export const portfolioPhotos: PortfolioImage[] = [
+  { id: 'p01', src: '/work/wrapup-wedding-01.jpg', alt: 'Newly married couple sharing a quiet moment', title: 'Just married', category: 'Weddings', location: 'Mumbai', size: 'tall', mediaType: 'image', width: 4160, height: 6240 },
+  { id: 'p02', src: '/work/wrapup-wedding-02.jpg', alt: 'Indian bride and groom in red and ivory wedding attire', title: 'The royal portrait', category: 'Weddings', location: 'Delhi', size: 'tall', mediaType: 'image', width: 3566, height: 5349 },
+  { id: 'p03', src: '/work/wrapup-wedding-03.jpg', alt: 'Couple during an intimate Indian wedding ritual', title: 'The sacred moment', category: 'Weddings', location: 'Pune', size: 'wide', mediaType: 'image', width: 5472, height: 3648 },
+  { id: 'p04', src: '/work/wrapup-wedding-04.jpg', alt: 'Black and white bridal portrait framed through a mirror', title: 'Before the ceremony', category: 'Portraits', location: 'Jaipur', size: 'tall', mediaType: 'image', width: 1842, height: 2897 },
+  { id: 'p05', src: '/work/wrapup-wedding-05.jpg', alt: 'Bride surrounded by joyful haldi hands', title: 'Haldi in full colour', category: 'Weddings', location: 'Ahmedabad', size: 'wide', mediaType: 'image', width: 5969, height: 3971 },
+  { id: 'p06', src: '/work/wrapup-wedding-06.jpg', alt: 'Indian wedding couple posed before a temple', title: 'A timeless promise', category: 'Weddings', location: 'Mehsana', size: 'wide', mediaType: 'image', width: 6048, height: 4024 },
+  { id: 'p07', src: '/work/wrapup-wedding-07.jpg', alt: 'Newly married couple looking at their camera together', title: 'A frame of their own', category: 'Weddings', location: 'Delhi', size: 'wide', mediaType: 'image', width: 6720, height: 4480 },
+  { id: 'p08', src: '/work/wrapup-wedding-08.jpg', alt: 'Groom beneath falling rice during a wedding ritual', title: 'Blessings in motion', category: 'Weddings', location: 'Pune', size: 'tall', mediaType: 'image', width: 4160, height: 6240 },
+  { id: 'p09', src: '/work/wrapup-wedding-09.jpg', alt: 'Sikh wedding ceremony inside a gurdwara', title: 'A quiet vow', category: 'Weddings', location: 'Delhi', size: 'tall', mediaType: 'image', width: 4480, height: 6720 },
+  { id: 'p10', src: '/work/wrapup-wedding-10.jpg', alt: 'Friends celebrating with the groom during haldi', title: 'The loudest laughter', category: 'Weddings', location: 'Jaipur', size: 'wide', mediaType: 'image', width: 6000, height: 4000 },
+  { id: 'p11', src: '/work/wrapup-wedding-11.jpg', alt: 'Bride smiling during her haldi celebration', title: 'Golden hour, golden joy', category: 'Portraits', location: 'Ahmedabad', size: 'tall', mediaType: 'image', width: 4000, height: 6000 },
+  { id: 'p12', src: '/work/wrapup-wedding-12.jpg', alt: 'Groom in traditional Bengali wedding attire', title: 'Ready for forever', category: 'Portraits', location: 'Mumbai', size: 'tall', mediaType: 'image', width: 4000, height: 6000 },
+  { id: 'p13', src: '/work/wrapup-wedding-13.jpg', alt: 'Black and white portrait of a Bengali bride', title: 'Grace in monochrome', category: 'Portraits', location: 'Delhi', size: 'tall', mediaType: 'image', width: 3119, height: 5896 },
+  { id: 'p14', src: '/work/wrapup-wedding-14.jpg', alt: 'Groom placing a ceremonial ornament above the bride', title: 'The smallest traditions', category: 'Weddings', location: 'Udaipur', size: 'wide', mediaType: 'image', width: 8256, height: 5504 },
+];
+
+// Keep the homepage motion-led while the Work archive combines every supplied
+// original-resolution photograph with all existing films.
+export const portfolio = portfolioVideos;
+export const portfolioMedia: PortfolioImage[] = [
+  portfolioPhotos[0], portfolioPhotos[1], portfolioVideos[0],
+  portfolioPhotos[2], portfolioPhotos[3], portfolioVideos[1],
+  portfolioPhotos[4], portfolioPhotos[5], portfolioVideos[2],
+  portfolioPhotos[6], portfolioPhotos[7], portfolioVideos[3],
+  portfolioPhotos[8], portfolioPhotos[9], portfolioVideos[4],
+  portfolioPhotos[10], portfolioPhotos[11], portfolioVideos[5],
+  portfolioPhotos[12], portfolioPhotos[13],
+  ...portfolioVideos.slice(6),
+];
 
 export const journal = [
   { slug: 'a-field-guide-to-being-present', title: 'A field guide to being present', category: 'Notes on making', date: '04.18.24', excerpt: 'The best photographs happen in the half-second before anyone realizes they are being watched.', media: portfolio[0].src },

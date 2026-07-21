@@ -15,12 +15,12 @@ export function Reveal({ children, className = '', delay = 0 }: { children: Reac
   return <motion.div className={className} initial={reduce ? false : { opacity: 0, y: 56, rotate: 1.2 }} whileInView={reduce ? undefined : { opacity: 1, y: 0, rotate: 0 }} viewport={{ once: true, margin: '-70px' }} transition={{ duration: .95, delay, ease: [.16, 1, .3, 1] }}>{children}</motion.div>;
 }
 
-export function ImageFrame({ src, alt, label, className = '', priority = false }: { src: string; alt: string; label?: string; className?: string; priority?: boolean }) {
-  return <motion.div className={`image-frame ${className}`} whileHover={{ scale: 1.015, rotate: -.35 }} transition={{ type: 'spring', stiffness: 180, damping: 20 }}><Image src={src} alt={alt} fill sizes="(max-width: 800px) 100vw, 50vw" priority={priority} className="cover-image" />{label && <span className="image-label"><Camera size={12} />{label}</span>}</motion.div>;
+export function ImageFrame({ src, alt, label, className = '', priority = false, contain = false, aspectRatio }: { src: string; alt: string; label?: string; className?: string; priority?: boolean; contain?: boolean; aspectRatio?: string }) {
+  return <motion.div className={`image-frame ${contain ? 'media-fit-contain' : ''} ${className}`} style={aspectRatio ? { aspectRatio } : undefined} whileHover={contain ? undefined : { scale: 1.015, rotate: -.35 }} transition={{ type: 'spring', stiffness: 180, damping: 20 }}><Image src={src} alt={alt} fill sizes="(max-width: 560px) 100vw, (max-width: 800px) 50vw, 33vw" priority={priority} className="cover-image" />{label && <span className="image-label"><Camera size={12} />{label}</span>}</motion.div>;
 }
 
-export function VideoFrame({ src, alt, label, className = '' }: { src: string; alt: string; label?: string; className?: string }) {
-  return <motion.div className={`image-frame media-video-frame ${className}`} whileHover={{ scale: 1.015, rotate: -.35 }} transition={{ type: 'spring', stiffness: 180, damping: 20 }}><video src={src} autoPlay muted loop playsInline preload="metadata" className="cover-image" aria-label={alt} />{label && <span className="image-label"><Film size={12} />{label}</span>}</motion.div>;
+export function VideoFrame({ src, alt, label, className = '', contain = false, aspectRatio }: { src: string; alt: string; label?: string; className?: string; contain?: boolean; aspectRatio?: string }) {
+  return <motion.div className={`image-frame media-video-frame ${contain ? 'media-fit-contain' : ''} ${className}`} style={aspectRatio ? { aspectRatio } : undefined} whileHover={contain ? undefined : { scale: 1.015, rotate: -.35 }} transition={{ type: 'spring', stiffness: 180, damping: 20 }}><video src={src} autoPlay muted loop playsInline preload="metadata" className="cover-image" aria-label={alt} />{label && <span className="image-label"><Film size={12} />{label}</span>}</motion.div>;
 }
 
 export function ArrowLink({ href, children, light = false }: { href: string; children: React.ReactNode; light?: boolean }) { return <Link className={`arrow-link ${light ? 'light' : ''}`} href={href}>{children}<ArrowUpRight size={16} /></Link>; }
@@ -99,12 +99,12 @@ export function GalleryCard({ item, index = 0, photoOnly = false, onOpen }: { it
   if (photoOnly) {
     return <Reveal delay={Math.min(index * .025, .3)} className={`gallery-card ${item.size || ''}`}>
       <button className="gallery-photo-button" type="button" onClick={onOpen} aria-label={`Open ${item.alt}`}>
-        <ImageFrame src={item.src} alt={item.alt} />
+        <ImageFrame src={item.src} alt={item.alt} className="gallery-media-frame" contain aspectRatio={item.width && item.height ? `${item.width} / ${item.height}` : undefined} />
       </button>
     </Reveal>;
   }
 
-  return <Reveal delay={Math.min(index * .025, .3)} className={`gallery-card ${item.size || ''} ${isVideo ? 'gallery-video-card' : ''}`}><Link href={`/portfolio/${item.category.toLowerCase()}`}>{isVideo ? <div className="gallery-video-wrap"><VideoFrame src={item.src} alt={item.alt} label={item.category} /><span className="media-hd-pill">HD FILM</span></div> : <ImageFrame src={item.src} alt={item.alt} label={item.category} />}<div className="gallery-caption"><span>{item.title}</span><span>{item.location}</span></div></Link></Reveal>;
+  return <Reveal delay={Math.min(index * .025, .3)} className={`gallery-card ${item.size || ''} ${isVideo ? 'gallery-video-card' : 'gallery-photo-card'}`}><Link href={`/portfolio/${item.category.toLowerCase()}`}>{isVideo ? <div className="gallery-video-wrap"><VideoFrame src={item.src} alt={item.alt} label={item.category} className="gallery-media-frame" contain aspectRatio="16 / 9" /><span className="media-hd-pill">HD FILM</span></div> : <ImageFrame src={item.src} alt={item.alt} label={item.category} className="gallery-media-frame" contain aspectRatio={item.width && item.height ? `${item.width} / ${item.height}` : undefined} />}<div className="gallery-caption"><span>{item.title}</span><span>{item.location}</span></div></Link></Reveal>;
 }
 
 export function FavoriteButton({ id }: { id: string }) { const [liked, setLiked] = useState(false); useEffect(() => setLiked(localStorage.getItem(`favorite-${id}`) === 'true'), [id]); const toggle = () => { setLiked(!liked); localStorage.setItem(`favorite-${id}`, String(!liked)); }; return <button className={`favorite ${liked ? 'is-liked' : ''}`} onClick={toggle} aria-label={liked ? 'Remove from favorites' : 'Add to favorites'}><Heart size={17} fill={liked ? 'currentColor' : 'none'} /></button>; }
