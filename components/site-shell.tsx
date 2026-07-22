@@ -61,7 +61,6 @@ export function Header() {
       <nav className="desktop-nav" aria-label="Primary navigation">
         <Link href="/portfolio">Work</Link>
         <Link href="/about">Our Story</Link>
-        <Link href="/services">Services</Link>
         <Link href="/journal">Journal</Link>
       </nav>
       <div className="header-actions">
@@ -74,7 +73,6 @@ export function Header() {
         <nav className="mobile-nav" aria-label="Mobile navigation">
           <Link onClick={() => setOpen(false)} href="/portfolio">Work</Link>
           <Link onClick={() => setOpen(false)} href="/about">Our Story</Link>
-          <Link onClick={() => setOpen(false)} href="/services">Services</Link>
           <Link onClick={() => setOpen(false)} href="/journal">Journal</Link>
           <a onClick={() => setOpen(false)} href={createPhoneUrl()}>Contact</a>
         </nav>
@@ -96,7 +94,6 @@ export function Footer() {
           <p className="eyebrow">Explore</p>
           <Link href="/portfolio">Portfolio</Link>
           <Link href="/about">Our Story</Link>
-          <Link href="/services">Services</Link>
         </div>
         <div>
           <p className="eyebrow">Elsewhere</p>

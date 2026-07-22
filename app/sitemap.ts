@@ -3,7 +3,7 @@ import { journal } from '@/lib/data';
 import { SITE_URL } from '@/lib/site-config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ['', '/portfolio', '/services', '/about', '/booking', '/journal', '/contact'];
+  const pages = ['', '/portfolio', '/about', '/booking', '/journal', '/contact'];
 
   return [
     ...pages.map((path) => ({

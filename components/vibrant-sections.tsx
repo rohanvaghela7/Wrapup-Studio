@@ -1,7 +1,7 @@
 'use client';
 
 import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
-import { Aperture, ArrowUpRight, Camera, Check, Sparkles, X } from 'lucide-react';
+import { Aperture, ArrowUpRight, Camera, Sparkles, X } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
@@ -143,24 +143,5 @@ export function IndianFeature() {
       <motion.div className="rang-photo rang-photo-small" whileInView={{ y: [-50, 0], rotate: [6, 2] }} viewport={{ once: true }} transition={{ duration: 1.1, delay: .12, ease: [.22, 1, .36, 1] }}><VideoFrame src={portfolio[4].src} alt="Colourful portfolio showreel" label="Films · India" /></motion.div>
       <motion.div className="film-stamp" animate={{ rotate: [2, -2, 2] }} transition={{ duration: 4, repeat: Infinity }}><Camera size={19} /> 35MM / DIGITAL / DRONE</motion.div>
     </div>
-  </section>;
-}
-
-const experienceSteps = [
-  { number: '01', name: 'Tell us your story', detail: 'We begin with the people, traditions, mood, and moments that matter most to you.', includes: ['Personal consultation', 'Creative direction', 'Location guidance'] },
-  { number: '02', name: 'We shape the day', detail: 'Your coverage is planned around natural moments, smooth timing, and room to be present.', includes: ['Custom timeline', 'Photo + film coordination', 'Calm on-day guidance'] },
-  { number: '03', name: 'Relive every feeling', detail: 'We carefully finish every frame and deliver a collection made to last for generations.', includes: ['Hand-edited photographs', 'Private online gallery', 'Story-led film delivery'] },
-];
-
-export function ExperienceHighlights() {
-  return <section className="sale-showcase">
-    <div className="sale-heading"><div><p className="eyebrow">The Wrap UP experience</p><h2>Thoughtful process.<br /><em>Joyful result.</em></h2></div><motion.div className="sale-seal" animate={{ rotate: 360 }} transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}><span>CARE · CRAFT · COLOUR ·</span><strong>YOU LIVE IT<br />WE FRAME IT</strong></motion.div></div>
-    <div className="offer-grid">{experienceSteps.map((item, index) => <motion.article className={`offer-card ${['pink', 'orange', 'blue'][index]}`} key={item.number} initial={{ opacity: 0, y: 70, rotate: index % 2 ? 3 : -3 }} whileInView={{ opacity: 1, y: 0, rotate: 0 }} whileHover={{ y: -12, rotate: index % 2 ? -1 : 1 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: .75, delay: index * .1, ease: [.22, 1, .36, 1] }}>
-      <div className={`offer-icon ${index < 2 ? 'offer-gif-icon' : ''}`}>{index === 0 ? <img src="/wedding-transparent.gif" alt="Animated wedding rings" /> : index === 1 ? <img src="/shutter-transparent.gif" alt="Animated camera shutter" /> : <Sparkles />}</div>
-      <p>{item.number} · How it works</p><h3>{item.name}</h3>
-      <div className="experience-card-detail">{item.detail}</div>
-      <ul>{item.includes.map(include => <li key={include}><Check size={14} />{include}</li>)}</ul>
-      <Link href="/contact">Start a conversation <span>↗</span></Link>
-    </motion.article>)}</div>
   </section>;
 }

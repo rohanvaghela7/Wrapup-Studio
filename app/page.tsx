@@ -36,7 +36,7 @@ export default function Home() {
         <p className="eyebrow hero-eyebrow"><Camera size={14} /> Mumbai · Delhi · Worldwide</p>
         <h1><span>Full colour.</span><br /><em>Full feeling.</em><br /><span>Forever.</span></h1>
         <p className="hero-sub">Joyful photography and cinematic films for Indian weddings, families, brands, and wildly good celebrations.</p>
-        <div className="hero-actions"><Link className="button button-pop" href="/services">Inquire now <Sparkles size={16} /></Link><ArrowLink href="/portfolio">Explore the work</ArrowLink></div>
+        <div className="hero-actions"><Link className="button button-pop" href="/contact">Inquire now <Sparkles size={16} /></Link><ArrowLink href="/portfolio">Explore the work</ArrowLink></div>
       </Reveal>
     </section>
 
@@ -79,7 +79,7 @@ export default function Home() {
         <p className="eyebrow"><span className="cta-number">01</span> Made around your story</p>
         <h2 className="section-heading">Your big day.<br /><em>Your brightest memories.</em></h2>
         <p className="hero-sub">Photo, film and drone experiences shaped around your people, place, and celebration.</p>
-        <div className="cta-actions"><Link className="button button-pop" href="/services">Explore our services <ArrowUpRight size={16} /></Link><span className="cta-note">Let’s make something worth remembering.</span></div>
+        <div className="cta-actions"><Link className="button button-pop" href="/contact">Let&apos;s talk <ArrowUpRight size={16} /></Link><span className="cta-note">Let’s make something worth remembering.</span></div>
       </div>
       <div className="cta-collage" aria-label="Wrap UP wedding photography">
         <div className="cta-frame cta-frame-main"><video src="/client-story-04.mp4" autoPlay muted loop playsInline preload="metadata" aria-label="Wedding story film" /></div>
