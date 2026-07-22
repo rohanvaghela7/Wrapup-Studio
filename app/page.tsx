@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, Camera, Sparkles } from 'lucide-react';
-import { portfolio } from '@/lib/data';
+import { portfolioPhotos, portfolioVideos } from '@/lib/data';
 import { Shell } from '@/components/site-shell';
 import { IndianFeature, RotatingWorkQuote, SplitHeroVideos } from '@/components/vibrant-sections';
 import { IndianWeddingCarousel } from '@/components/indian-wedding-carousel';
@@ -16,6 +16,15 @@ const beltPhotos = [
   { src: '/belt/belt-photo-06.jpg', alt: 'Bride and groom posing on a palace staircase' },
   { src: '/belt/belt-photo-07.jpg', alt: 'Bride during a traditional wedding ceremony' },
   { src: '/belt/belt-photo-08.jpg', alt: 'Newly engaged couple showing their rings' },
+];
+
+const homePortfolio = [
+  portfolioVideos[0],
+  portfolioVideos[1],
+  portfolioVideos[2],
+  portfolioPhotos[4],
+  portfolioVideos[4],
+  portfolioPhotos[13],
 ];
 
 export default function Home() {
@@ -35,7 +44,7 @@ export default function Home() {
 
     <section className="section work-section-colour">
       <RotatingWorkQuote />
-      <div className="work-grid">{portfolio.slice(0, 6).map((item, index) => <GalleryCard item={item} index={index} key={item.id} />)}</div>
+      <div className="work-grid">{homePortfolio.map((item, index) => <GalleryCard item={item} index={index} key={item.id} />)}</div>
       <div style={{ marginTop: '7vw' }}><ArrowLink href="/portfolio">View full portfolio</ArrowLink></div>
     </section>
 
