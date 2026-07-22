@@ -99,7 +99,7 @@ export function GalleryCard({ item, index = 0, photoOnly = false, onOpen }: { it
   if (photoOnly) {
     return <Reveal delay={Math.min(index * .025, .3)} className={`gallery-card ${item.size || ''}`}>
       <button className="gallery-photo-button" type="button" onClick={onOpen} aria-label={`Open ${item.alt}`}>
-        <ImageFrame src={item.src} alt={item.alt} className="gallery-media-frame" contain aspectRatio={item.width && item.height ? `${item.width} / ${item.height}` : undefined} />
+        <ImageFrame src={item.src} alt={item.alt} className="gallery-media-frame" aspectRatio={item.width && item.height ? `${item.width} / ${item.height}` : undefined} />
       </button>
     </Reveal>;
   }
@@ -108,7 +108,7 @@ export function GalleryCard({ item, index = 0, photoOnly = false, onOpen }: { it
     <Link href={`/portfolio/${item.category.toLowerCase()}`}>
       {isVideo
         ? <div className="gallery-video-wrap"><VideoFrame src={item.src} alt={item.alt} className="gallery-media-frame" contain aspectRatio="16 / 9" /></div>
-        : <ImageFrame src={item.src} alt={item.alt} className="gallery-media-frame" contain aspectRatio={item.width && item.height ? `${item.width} / ${item.height}` : undefined} />}
+        : <ImageFrame src={item.src} alt={item.alt} className="gallery-media-frame" aspectRatio={item.width && item.height ? `${item.width} / ${item.height}` : undefined} />}
     </Link>
   </Reveal>;
 }
