@@ -45,7 +45,7 @@ export default function AboutPage() {
     </section>
 
     <section className="story-team-section section-dark">
-      <Reveal className="story-team-image"><VideoFrame src="/client-story-05.mp4" alt="Wrap UP team working on location" label="On location · Worldwide" /></Reveal>
+      <Reveal className="story-team-image"><VideoFrame src="/client-story-05.mp4" alt="Wrap UP team working on location" label="On location · Worldwide" className="story-team-video-frame" /></Reveal>
       <Reveal className="story-team-copy"><p className="eyebrow">75 people · One team</p><h2>Professional scale.<br /><em>Personal energy.</em></h2><p>Our team includes lead photographers, cinematographers, drone pilots, creative directors, producers, colourists, retouchers, sound designers, and client experience specialists.</p><p>Every project has a dedicated core crew and one clear point of contact. Behind them sits the depth of a 75-person studio—ready to solve, support, and deliver.</p><div className="team-role-list"><span>24 photographers</span><span>16 filmmakers</span><span>18 editors</span><span>7 producers</span><span>6 drone specialists</span><span>4 client partners</span></div></Reveal>
     </section>
 
