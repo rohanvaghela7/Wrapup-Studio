@@ -5,6 +5,7 @@ import { PageIntro, Reveal, VideoFrame } from '@/components/ui';
 import { StoryBeginningCard } from '@/components/story-beginning-card';
 import { StoryClientsCard } from '@/components/story-clients-card';
 import { StoryCountriesCard } from '@/components/story-countries-card';
+import { StoryProfessionalsCard } from '@/components/story-professionals-card';
 
 const milestones = [
   { year: '1996', title: 'One camera. One brave beginning.', text: 'Wrap UP begins as a two-person studio with a borrowed camera, a hand-painted sign, and a belief that honest photographs can outlive every trend.' },
@@ -35,7 +36,7 @@ export default function AboutPage() {
 
     <section className="story-numbers-section">
       <div className="story-numbers-heading"><p className="eyebrow">The story in numbers</p><h2>Built slowly.<br /><em>Trusted widely.</em></h2></div>
-      <div className="story-number-grid">{numbers.map((item, index) => <Reveal key={item.label} delay={index * .08} className={`story-number-card ${index === 0 ? 'beginning-video-card' : ''} ${index === 1 ? 'client-video-card' : ''} ${index === 2 ? 'country-video-card' : ''}`}>{index === 0 ? <StoryBeginningCard /> : index === 1 ? <StoryClientsCard /> : index === 2 ? <StoryCountriesCard /> : <><strong>{item.value}</strong><h3>{item.label}</h3><p>{item.detail}</p></>}</Reveal>)}</div>
+      <div className="story-number-grid">{numbers.map((item, index) => <Reveal key={item.label} delay={index * .08} className={`story-number-card ${index === 0 ? 'beginning-video-card' : ''} ${index === 1 ? 'client-video-card' : ''} ${index === 2 ? 'country-video-card' : ''} ${index === 3 ? 'professionals-video-card' : ''}`}>{index === 0 ? <StoryBeginningCard /> : index === 1 ? <StoryClientsCard /> : index === 2 ? <StoryCountriesCard /> : <StoryProfessionalsCard />}</Reveal>)}</div>
     </section>
 
     <section className="section story-timeline-section">
